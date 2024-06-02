@@ -2,38 +2,8 @@ import matplotlib.pyplot as plt
 
 from PIL import Image               # Librería para el procesamiento de imágenes
 import matplotlib.image as img      # Para poder representar las imágenes más fácil  
-# import cv2
-# from skimage.util import random_noise
 import numpy as np
 import random as rd
-
-# No funciona muy bien aun que no descarto mejorarlo para implementar la función 
-# def add_noise(name:str,mode:str):
-#     '''
-#     # Explicación
-#     Le damos una imagen de entrada y le mete ruido.
-#     # Parámetros de entrada
-#     name: nombre de la imagen a la que queremos meterle ruido
-#     mode: tipo de ruido a añadir
-#         - 'gaussian'-> Gaussian-distributed additive noise.
-#         - 'localvar'-> Gaussian-distributed additive noise, with specified local variance at each point of image.
-#         - 'poisson' -> Poisson-distributed noise generated from the data.
-#         - 'pepper'  -> Replaces random pixels with 0 (for unsigned images) or -1 (for signed images).
-#         - 'salt'    -> Replaces random pixels with 1.
-#         - 's&p'     -> Replaces random pixels with either 1 or low_val, where low_val is 0 for unsigned images or -1 for signed images.
-#         - 'speckle' -> Multiplicative noise using out = image + n * image, where n is Gaussian noise with specified mean & variance.
-#     # Parámetros de salida
-#     name2: nos devuelve el nombre de la imagen con ruido
-#     '''
-#     # img = cv2.imread(name,cv2.IMREAD_GRAYSCALE)
-#     image = Image.open(name)
-#     img_gauss = random_noise(image, mode = mode, mean = 0, var = 0.075)
-#     img_gauss = (img_gauss*255).astype('uint8')
-#     (thresh, img_gauss_bw) = cv2.threshold(img_gauss,128,255, cv2.THRESH_BINARY)
-#     # img_gauss_bw= cv2.cvtColor(img_gauss, cv2.COLOR_BGR2GRAY)
-#     name2  = name[:name.find('.')]+'_noise.png' # Le añado un _noise a las imagenes con ruido
-#     cv2.imwrite(name2,img_gauss_bw)
-#     return img_gauss_bw # Nos devuele la imagen como una matriz 
 
 def process_image(name:str,size:tuple):
     '''
@@ -78,9 +48,7 @@ def noise(image:np.ndarray,p:float):
         else:
             pass
     image = image_flatten.reshape(shape)
-    
-    # img = Image.fromarray(image,mode='L')
-    # img.save('init_state.png')
+ 
     return image
 
 def delete_image(image:np.array,percentage:float)->np.ndarray:
