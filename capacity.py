@@ -37,20 +37,11 @@ def measure_capacity(L):
             state, n_state = change_one(init_state)                       
             final_state = hopfield.update(state,100,np.sign)
             overlap_n = (1-(0.5/N)*sum(abs(init_state.flatten()-final_state.flatten())))
-            #  definimos un función nueva que me compare
-            # overlap_n2=init_state.flatten()[n_state]==final_state.flatten()[n_state]
-            # overlap_n2=init_state.flatten()==final_state.flatten()
-            # overlap2.append(overlap_n2)
             overlap.append(overlap_n)
+        
         overlap_M.append(np.mean(overlap))
-        # overlap_M2.append(np.mean(overlap2))
-
-
+        
     return kall/N, overlap_M
-# print(len(overlap_M))
-
-# x = np.linspace(0,len(overlap_M))
-
 
 x1, overlap1 = measure_capacity(10)
 x2, overlap2 = measure_capacity(20)
