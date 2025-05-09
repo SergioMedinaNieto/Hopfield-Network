@@ -8,9 +8,6 @@ The network is capable of storing and retrieving patterns, making it useful for 
 - [Features](#features)
 - [Usage](#usage)
 - [Examples](#examples)
-- [Theory](#theory)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 A **Hopfield Network** is a fully connected auto-associative neural network proposed by John Hopfield in 1982. It can store one or more patterns and retrieve them even
