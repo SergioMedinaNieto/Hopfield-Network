@@ -59,6 +59,6 @@ final_state = hopfield.update_slow(init_state, nsteps, f_activation=np.sign, n=0
 # Example
 Here, you have the init state you get after you process the image (left) and the final state you get after 100 steps.
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images/final_state.png" alt="Initial state with random noise" width="30%">
-  <img src="Images/init_state.png" alt="Final state after 100 steps" width="30%">
+  <img src="Images/init_state.png" alt="Initial state with random noise" width="30%">
+  <img src="Images/final_state.png" alt="Final state after 100 steps" width="30%">
 </div>
